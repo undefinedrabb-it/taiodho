@@ -26,7 +26,7 @@ pub fn build(b: *std.Build) void {
     lib.initial_memory = std.wasm.page_size * number_of_pages;
     lib.max_memory = std.wasm.page_size * number_of_pages;
 
-    const install_opt = .{ .dest_dir = .{ .override = .{ .custom = "../public" } } };
+    const install_opt = .{ .dest_dir = .{ .override = .{ .custom = "../" } } };
     const artifact = b.addInstallArtifact(lib, install_opt);
 
     b.getInstallStep().dependOn(&artifact.step);
